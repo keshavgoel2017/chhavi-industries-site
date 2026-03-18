@@ -82,6 +82,21 @@
     <p>📧 chhavi.ind2026@gmail.com</p>
 </section>
 
+  <script>
+// Show subcategories when top-level button is clicked
+function showSub(category) {
+  // Hide all subcategory divs first
+  document.querySelectorAll('.sub-buttons').forEach(div => div.style.display = 'none');
+  // Show the selected category
+  document.getElementById(category).style.display = 'block';
+}
+
+// Redirect to the detail page when a subcategory button is clicked
+function goToDetail(page) {
+  window.location.href = page + '.html';
+}
+</script>
+
 <script src="assets/js/script.js"></script>
 
 </body>
