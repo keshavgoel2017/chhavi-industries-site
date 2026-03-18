@@ -34,18 +34,14 @@ body {
 }
 
 .slide {
-  width: 100%;
-  height: 300px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
+    opacity: 0;
+    transition: opacity 1s ease;
+    position: absolute; /* or relative depending on layout */
+    width: 100%;
 }
 
 .slide.active {
-  opacity: 1;
-  z-index: 2;
+    opacity: 1;
 }
 
 section {
