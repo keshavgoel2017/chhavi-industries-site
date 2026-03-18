@@ -37,41 +37,23 @@
 
   <!-- Top-level buttons -->
   <div class="product-buttons">
-    <button onclick="showSub('water')">Water-Based Ink</button>
-    <button onclick="showSub('solvent')">Solvent-Based Ink</button>
+    <button id="water-btn">Water-Based Ink</button>
+    <button id="solvent-btn">Solvent-Based Ink</button>
   </div>
 
   <!-- Subcategory buttons (hidden initially) -->
   <div id="water" class="sub-buttons" style="display:none;">
-    <button onclick="goToDetail('water-corrugated')">For Corrugate</button>
-    <button onclick="goToDetail('water-pp-spunbond')">For PP Spunbond Fabric</button>
-    <button onclick="goToDetail('water-paper-cup')">For Paper Cups</button>
+    <button onclick="goToDetail('water-laminate.html')">For Laminate</button>
+    <button onclick="goToDetail('water-pp-spunbond.html')">For PP Spunbond Fabric</button>
+    <button onclick="goToDetail('water-paper-cup.html')">For Paper Cups</button>
   </div>
 
   <div id="solvent" class="sub-buttons" style="display:none;">
-    <button onclick="goToDetail('solvent-pp')">For PP Fabric</button>
-    <button onclick="goToDetail('solvent-lamination')">For Lamination</button>
-    <button onclick="goToDetail('solvent-woven')">For Woven Fabric</button>
+    <button onclick="goToDetail('solvent-pp.html')">For PP Fabric</button>
+    <button onclick="goToDetail('solvent-plastic.html')">For Plastic</button>
+    <button onclick="goToDetail('solvent-woven.html')">For Woven Fabric</button>
   </div>
 </section>
-
-    <div class="category">
-        <h3>Water Based Inks</h3>
-        <ul>
-            <li>corrugation Inks</li>
-            <li>PP Spunbond Fabric Inks</li>
-            <li>Paper Cup Inks</li>
-        </ul>
-    </div>
-
-    <div class="category">
-        <h3>Solvent Based Inks</h3>
-        <ul>
-            <li>PP Fabric Inks</li>
-            <li>Lamination Inks</li>
-            <li>Woven Sack Inks</li>
-        </ul>
-    </div>
 </section>
 
 <!-- Contact -->
