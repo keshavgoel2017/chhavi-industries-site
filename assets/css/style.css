@@ -3,20 +3,28 @@ body {
     font-family: Arial, sans-serif;
     background: #f8ffff;
 }
-.logo {
-  width: 150px;    /* adjust this number to make logo smaller or bigger */
-  height: auto;    /* keeps aspect ratio */
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: 10px;
-}
-<img src="assets/images/logo.png" alt="CHHAVI INDUSTRIES Logo" class="logo">
 
-header {
-    background: linear-gradient(to right, #00bcd4, #009688);
-    color: white;
-    text-align: center;
-    padding: 20px;
+/* Header container */
+.header {
+  display: flex;               /* Align items in a row */
+  justify-content: space-between; /* Company name left, logo right */
+  align-items: center;         /* Vertical alignment */
+  padding: 10px 20px;          /* Space around */
+  background-color: #ffffff;   /* White background */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* subtle shadow */
+}
+
+/* Company name */
+.company-name {
+  font-size: 24px;
+  color: #0b3d91; /* your brand color */
+  margin: 0;
+}
+
+/* Logo */
+.logo {
+  width: 120px;     /* Adjust size here */
+  height: auto;     /* Keeps aspect ratio */
 }
 
 .slider {
