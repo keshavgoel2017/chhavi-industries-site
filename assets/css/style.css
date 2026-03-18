@@ -3,6 +3,7 @@ body {
     font-family: Arial, sans-serif;
     background: #f8ffff;
 }
+<img src="assets/images/logo.png" alt="CHHAVI INDUSTRIES Logo" class="logo">
 
 header {
     background: linear-gradient(to right, #00bcd4, #009688);
