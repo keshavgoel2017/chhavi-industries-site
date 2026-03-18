@@ -50,8 +50,23 @@ section {
     text-align: center;
 }
 
-.products {
-    background: #e0f7fa;
+/* Buttons styling */
+.product-buttons button, .sub-buttons button {
+  background-color: #0b3d91;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.product-buttons button:hover, .sub-buttons button:hover {
+  background-color: #06427c;
+}
+
+.sub-buttons {
+  margin-top: 10px;
 }
 
 .category {
