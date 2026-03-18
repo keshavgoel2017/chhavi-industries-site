@@ -17,7 +17,7 @@ body {
 /* Company name */
 .company-name {
   font-size: 24px;
-  color: #0b3d91; /* your brand color */
+  color: red; /* your brand color */
   margin: 0;
 }
 
