@@ -1,14 +1,14 @@
 // Banner Slider
 let slides = document.querySelectorAll('.slide');
-let index = 0;
+let current = 0;
 
-function showSlide() {
-    slides.forEach(slide => slide.classList.remove('active'));
-    slides[index].classList.add('active');
-    index = (index + 1) % slides.length;
+function showNextSlide() {
+    slides[current].classList.remove('active');
+    current = (current + 1) % slides.length;
+    slides[current].classList.add('active');
 }
 
-setInterval(showSlide, 8000);
+setInterval(showNextSlide, 3000); // 3000 = 3 seconds
 
 // Product Buttons (example)
 document.getElementById('water-button').addEventListener('click', function() {
