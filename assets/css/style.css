@@ -3,6 +3,13 @@ body {
     font-family: Arial, sans-serif;
     background: #f8ffff;
 }
+.logo {
+  width: 150px;    /* adjust this number to make logo smaller or bigger */
+  height: auto;    /* keeps aspect ratio */
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+}
 <img src="assets/images/logo.png" alt="CHHAVI INDUSTRIES Logo" class="logo">
 
 header {
