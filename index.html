@@ -65,21 +65,27 @@
 </section>
 
   <script>
-// Show subcategories when top-level button is clicked
-function showSub(category) {
-  // Hide all subcategory divs first
-  document.querySelectorAll('.sub-buttons').forEach(div => div.style.display = 'none');
-  // Show the selected category
-  document.getElementById(category).style.display = 'block';
-}
+const waterBtn = document.getElementById('water-btn');
+const solventBtn = document.getElementById('solvent-btn');
+const waterDiv = document.getElementById('water');
+const solventDiv = document.getElementById('solvent');
 
-// Redirect to the detail page when a subcategory button is clicked
+// Show/hide subcategories
+waterBtn.addEventListener('click', () => {
+  waterDiv.style.display = 'block';
+  solventDiv.style.display = 'none';
+});
+
+solventBtn.addEventListener('click', () => {
+  solventDiv.style.display = 'block';
+  waterDiv.style.display = 'none';
+});
+
+// Redirect function
 function goToDetail(page) {
-  window.location.href = page + '.html';
+  window.location.href = page;
 }
 </script>
-
-<script src="assets/js/script.js"></script>
 
 </body>
 </html>
