@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Water-Based Inks</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* HEADER FIX */
+.header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 25px;
+  box-sizing: border-box;
+  z-index: 10;
+}
+
+/* MENU */
+.menu-btn {
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+}
+
+/* LOGO FIX */
+.logo img {
+  height: 45px;
+  max-width: 150px;
+  object-fit: contain;
+}
+
+/* SIDEBAR */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -260px;
+  width: 260px;
+  height: 100%;
+  background: #0b1c3d;
+  padding-top: 60px;
+  transition: 0.3s;
+  z-index: 1000;
+}
+
+.sidebar a {
+  display: block;
+  padding: 15px;
+  color: white;
+  text-decoration: none;
+}
+
+.sidebar a:hover {
+  background: #1e3a8a;
+}
+
+/* OVERLAY */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  background: rgba(0,0,0,0.5);
+  z-index: 999;
+}
+
+/* BANNER FIX */
+.banner {
+  height: 100vh;
+  background-image: url('images/banner3.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+/* DARK OVERLAY */
+.banner::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.55);
+}
+
+/* CONTENT */
+.content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.content h1 {
+  margin-bottom: 30px;
+  font-size: 32px;
+}
+
+/* BUTTONS */
+.btn {
+  width: 280px;
+  margin: 12px;
+  padding: 15px;
+  font-size: 17px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  background: linear-gradient(135deg, #2563eb, #1e3a8a);
+  color: white;
+  font-weight: bold;
+  transition: 0.3s;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+}
+
+.btn:hover {
+  transform: translateY(-5px) scale(1.05);
+  background: linear-gradient(135deg, #1e3a8a, #2563eb);
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="menu-btn" onclick="openMenu()">☰</div>
+
+  <div class="logo">
+    <img src="images/logo.png" alt="Logo">
+  </div>
+</div>
+
+<!-- SIDEBAR -->
+<div class="sidebar" id="sidebar">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="products.html">Products</a>
+  <a href="industries.html">Industries</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<div class="overlay" id="overlay" onclick="closeMenu()"></div>
+
+<!-- BANNER -->
+<div class="banner">
+  <div class="content">
+    <h1>Our Products</h1>
+
+    <button class="btn" onclick="openPage('product1.html')">
+      Water Based Inks
+    </button>
+
+    <button class="btn" onclick="openPage('product2.html')">
+      Solvent Based Inks
+    </button>
+
+  </div>
+</div>
+
+<!-- JS -->
+<script>
+function openMenu() {
+  document.getElementById("sidebar").style.left = "0";
+  document.getElementById("overlay").style.display = "block";
+}
+
+function closeMenu() {
+  document.getElementById("sidebar").style.left = "-260px";
+  document.getElementById("overlay").style.display = "none";
+}
+
+function openPage(page) {
+  window.location.href = page;
+}
+</script>
+
+</body>
+</html>

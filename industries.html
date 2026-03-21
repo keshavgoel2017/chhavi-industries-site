@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Industries We Serve - Chhavi Industries</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+/* GENERAL STYLES */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  color: #333;
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: #0a3d62;
+  color: white;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 9999;
+  box-sizing: border-box;
+}
+
+.menu-icon {
+  font-size: 28px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.logo img {
+  height: 40px;
+  max-width: 120px;
+  object-fit: contain;
+}
+
+/* SIDE MENU */
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background: #0a3d62;
+  padding-top: 60px;
+  transition: left 0.3s ease;
+  z-index: 10000;
+}
+
+.side-menu.open {
+  left: 0;
+}
+
+.side-menu a {
+  display: block;
+  color: white;
+  padding: 15px 20px;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.side-menu a:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+/* MAIN CONTENT */
+.content {
+  margin-top: 80px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  text-align: center;
+}
+
+/* SLIDER */
+.slider {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  margin: 20px auto;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.slide {
+  display: none;
+  position: relative;
+}
+
+.slide img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* TEXT STRIP */
+.slide-text {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: #007bff;
+  color: white;
+  text-align: center;
+  padding: 15px 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.slide.active {
+  display: block;
+}
+
+/* ARROWS */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 28px;
+  background: rgba(0,0,0,0.5);
+  color: white;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 50%;
+  user-select: none;
+  z-index: 10;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+.prev:hover, .next:hover {
+  background: rgba(0,0,0,0.8);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .slide-text {
+    font-size: 16px;
+    padding: 10px;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="menu-icon" onclick="toggleMenu()">☰</div>
+  <div class="logo">
+    <img src="images/logo.png" alt="Logo">
+  </div>
+</div>
+
+<!-- SIDE MENU -->
+<div id="menu" class="side-menu">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="products.html">Products</a>
+  <a href="industries.html">Industries</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<!-- MAIN -->
+<div class="content">
+  <h1>Industries We Serve</h1>
+
+  <div class="slider">
+
+    <!-- SLIDES -->
+    <div class="slide active">
+      <img src="images/banner11.jpg">
+      <div class="slide-text">Corrugated box & Paper Industries</div>
+    </div>
+
+    <div class="slide">
+      <img src="images/banner13.jpg">
+      <div class="slide-text">Paper Cup Industries & Other Paper ind.</div>
+    </div>
+
+    <div class="slide">
+      <img src="images/banner12.webp">
+      <div class="slide-text">Label Packaging, Printed Labels</div>
+    </div>
+
+    <div class="slide">
+      <img src="images/banner14.jpg">
+      <div class="slide-text">PP Spun Bond Fabric Industries</div>
+    </div>
+
+    <!-- ARROWS -->
+    <div class="prev" onclick="changeSlide(-1)">❮</div>
+    <div class="next" onclick="changeSlide(1)">❯</div>
+
+  </div>
+</div>
+
+<script>
+// MENU
+function toggleMenu() {
+  document.getElementById("menu").classList.toggle("open");
+}
+
+// CLOSE MENU
+document.addEventListener("click", function(event) {
+  const menu = document.getElementById("menu");
+  const btn = document.querySelector(".menu-icon");
+
+  if (menu.classList.contains("open") &&
+      !menu.contains(event.target) &&
+      !btn.contains(event.target)) {
+    menu.classList.remove("open");
+  }
+});
+
+// SLIDER
+let slides = document.querySelectorAll('.slide');
+let currentSlide = 0;
+
+function showSlide(index) {
+  slides.forEach((slide, i) => {
+    slide.classList.remove('active');
+    if(i === index) slide.classList.add('active');
+  });
+}
+
+// AUTO SLIDE
+let slideInterval = setInterval(nextAutoSlide, 5000);
+
+function nextAutoSlide() {
+  currentSlide = (currentSlide + 1) % slides.length;
+  showSlide(currentSlide);
+}
+
+// BUTTON CONTROL
+function changeSlide(direction) {
+  clearInterval(slideInterval);
+
+  currentSlide += direction;
+
+  if (currentSlide < 0) {
+    currentSlide = slides.length - 1;
+  } else if (currentSlide >= slides.length) {
+    currentSlide = 0;
+  }
+
+  showSlide(currentSlide);
+
+  slideInterval = setInterval(nextAutoSlide, 5000);
+}
+</script>
+
+</body>
+</html>

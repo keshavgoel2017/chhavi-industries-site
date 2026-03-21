@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Water-Based Inks</title>
+
+<style>
+
+/* RESET */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* BODY */
+body, html {
+  font-family: Arial, sans-serif;
+  color: white;
+  overflow-x: hidden;
+  background: #ffffff;
+}
+
+/* HEADER */
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+  z-index: 1000;
+}
+
+/* LEFT SIDE */
+.left-controls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* MENU BUTTON */
+.menu-btn {
+  font-size: 26px;
+  cursor: pointer;
+  color: white;
+}
+
+/* BACK BUTTON */
+.back-btn {
+  font-size: 18px;
+  cursor: pointer;
+  color: white;
+}
+
+/* LOGO */
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  max-width: 40%;
+}
+
+.logo {
+  height: 40px;
+  max-width: 120px;
+  object-fit: contain;
+}
+
+/* SIDEBAR MENU */
+.sidebar {
+  position: fixed;
+  left: -250px;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  background: #0b3d91;
+  padding-top: 60px;
+  transition: 0.3s;
+  z-index: 999;
+}
+
+.sidebar a {
+  display: block;
+  padding: 15px;
+  color: white;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  font-size: 18px;
+}
+
+.sidebar a:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+/* MAIN SECTION */
+.main {
+  min-height: 100vh;
+  background: url("images/banner3.jpeg") no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 20px 20px; /* space for fixed header */
+  box-sizing: border-box;
+}
+
+/* CONTENT BOX */
+.content-box {
+  background: rgba(240, 240, 240, 0.95); /* light gray */
+  color: #0000ff; /* blue text */
+  padding: 30px;
+  max-width: 800px;
+  width: 100%;
+  border-radius: 10px;
+  text-align: left;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.content-box h2 {
+  margin-top: 0;
+  text-align: center;
+  font-size: 28px;
+}
+
+.content-box p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+  font-size: 18px;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+  .main {
+    min-height: auto;
+    padding: 100px 15px 20px;
+  }
+
+  .content-box {
+    max-width: 95%;
+    padding: 20px;
+    font-size: 16px;
+    border-radius: 8px;
+  }
+
+  .content-box h2 {
+    font-size: 24px;
+  }
+
+  .menu-btn {
+    font-size: 30px;
+  }
+
+  .back-btn {
+    font-size: 20px;
+  }
+
+  .logo {
+    height: 35px;
+  }
+}
+
+@media (max-width: 480px) {
+  .content-box h2 {
+    font-size: 22px;
+  }
+
+  .content-box p {
+    font-size: 15px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="left-controls">
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+    <div class="back-btn" onclick="goBack()">← Back</div>
+  </div>
+
+  <div class="logo-container">
+    <img src="images/logo.png" class="logo" alt="Logo">
+  </div>
+</div>
+
+<!-- SIDEBAR -->
+<div class="sidebar" id="sidebar">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="products.html">Products</a>
+  <a href="industries.html">Industries</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+  <div class="content-box">
+    <h2>Solvent-Based Inks</h2>
+
+    <p>
+      Solvent-based inks are high-performance inks that use organic solvents 
+to carry pigments. These inks are known for their excellent adhesion, 
+durability, and resistance to water, chemicals, and fading. They are 
+ideal for printing on non-porous surfaces like plastics, metals, glass,
+and coated materials.
+</p>
+<p>
+✅Key Benefits:
+Durable & Long-Lasting: Resistant to water, UV light, and abrasion, 
+making prints highly durable.
+</p>
+<p>
+✅Excellent Adhesion: Works on a wide variety of surfaces, including 
+non-porous materials where water-based inks may fail.
+</p>
+<p>
+Vibrant & Sharp Colors: Produces strong, vivid colors with consistent 
+print quality.
+</p>
+<p>
+✅Fast Drying: Reduces production time and improves efficiency in 
+commercial printing.
+</p>
+<p>
+✅Versatile Applications: Suitable for industrial, packaging, and 
+specialty printing.
+</p>
+<p>
+✅Applications:
+Solvent-based inks are commonly used in:
+Flexible packaging and labels,Plastic, metal, and glass printing
+Industrial and commercial printing Outdoor signage and billboards.
+</p>
+<p>
+Why Choose Our Solvent-Based Inks:
+</p>
+<p>
+At Chhavi Industries, our solvent-based inks are engineered for 
+superior performance, reliability, and consistency. 
+They provide sharp, vibrant prints and excellent adhesion, 
+ensuring your products stand out while meeting industrial standards.
+    </p>
+
+
+  </div>
+</div>
+
+<script>
+/* MENU TOGGLE */
+function toggleMenu() {
+  const sidebar = document.getElementById("sidebar");
+  sidebar.style.left = (sidebar.style.left === "0px") ? "-250px" : "0px";
+}
+
+/* BACK BUTTON */
+function goBack() {
+  window.location.href = "products.html";
+}
+</script>
+
+</body>
+</html>

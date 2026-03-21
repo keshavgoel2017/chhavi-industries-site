@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Water-Based Inks</title>
+
+<style>
+
+/* RESET */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* BODY */
+body, html {
+  font-family: Arial, sans-serif;
+  color: white;
+  overflow-x: hidden;
+  background: #ffffff;
+}
+
+/* HEADER */
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+  z-index: 1000;
+}
+
+/* LEFT SIDE */
+.left-controls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* MENU BUTTON */
+.menu-btn {
+  font-size: 26px;
+  cursor: pointer;
+  color: white;
+}
+
+/* BACK BUTTON */
+.back-btn {
+  font-size: 18px;
+  cursor: pointer;
+  color: white;
+}
+
+/* LOGO */
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  max-width: 40%;
+}
+
+.logo {
+  height: 40px;
+  max-width: 120px;
+  object-fit: contain;
+}
+
+/* SIDEBAR MENU */
+.sidebar {
+  position: fixed;
+  left: -250px;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  background: #0b3d91;
+  padding-top: 60px;
+  transition: 0.3s;
+  z-index: 999;
+}
+
+.sidebar a {
+  display: block;
+  padding: 15px;
+  color: white;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  font-size: 18px;
+}
+
+.sidebar a:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+/* MAIN SECTION */
+.main {
+  min-height: 100vh;
+  background: url("images/banner3.jpeg") no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 20px 20px; /* space for fixed header */
+  box-sizing: border-box;
+}
+
+/* CONTENT BOX */
+.content-box {
+  background: rgba(240, 240, 240, 0.95); /* light gray */
+  color: #0000ff; /* blue text */
+  padding: 30px;
+  max-width: 800px;
+  width: 100%;
+  border-radius: 10px;
+  text-align: left;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.content-box h2 {
+  margin-top: 0;
+  text-align: center;
+  font-size: 28px;
+}
+
+.content-box p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+  font-size: 18px;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+  .main {
+    min-height: auto;
+    padding: 100px 15px 20px;
+  }
+
+  .content-box {
+    max-width: 95%;
+    padding: 20px;
+    font-size: 16px;
+    border-radius: 8px;
+  }
+
+  .content-box h2 {
+    font-size: 24px;
+  }
+
+  .menu-btn {
+    font-size: 30px;
+  }
+
+  .back-btn {
+    font-size: 20px;
+  }
+
+  .logo {
+    height: 35px;
+  }
+}
+
+@media (max-width: 480px) {
+  .content-box h2 {
+    font-size: 22px;
+  }
+
+  .content-box p {
+    font-size: 15px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="left-controls">
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+    <div class="back-btn" onclick="goBack()">← Back</div>
+  </div>
+
+  <div class="logo-container">
+    <img src="images/logo.png" class="logo" alt="Logo">
+  </div>
+</div>
+
+<!-- SIDEBAR -->
+<div class="sidebar" id="sidebar">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="products.html">Products</a>
+  <a href="industries.html">Industries</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+  <div class="content-box">
+    <h2>About Us</h2>
+
+    <p>
+Chhavi Industries is a leading manufacturer and supplier of 
+high-quality inks, specializing in both water-based and solvent-based 
+inks for industrial, commercial, and packaging applications. With years
+of expertise in the printing industry, we are committed to delivering
+innovative, eco-friendly, and reliable solutions that meet the highest
+standards of quality and performance.
+</p>
+<p>
+Our mission is to provide top-quality inks that empower businesses 
+to create vibrant, durable, and sustainable printed products. We 
+strive to combine innovation, reliability, and environmental 
+responsibility in every product we deliver.
+</p>
+
+<p>To be a trusted name in the printing and ink industry, known for 
+excellence, sustainability, and customer satisfaction worldwide.
+</p>
+
+<p>
+Water-Based Inks: Eco-friendly inks for paper, textiles, and packaging
+with vibrant colors and smooth finishes.
+</p>
+<p>
+Solvent-Based Inks: Durable inks for plastics, metals, glass, and 
+non-porous surfaces with excellent adhesion and longevity.
+</p>
+<p>
+Customized Solutions: Tailored formulations to meet your specific 
+printing needs.
+</p>
+
+<p>
+✅ Quality Assurance: Rigorous testing and high standards for every 
+batch of ink.
+</p>
+<p>
+✅ Innovation: Constantly improving formulations to meet modern 
+printing requirements.
+</p>
+<p>
+✅ Eco-Friendly Practices: Commitment to sustainable and safe ink 
+production.
+</p>
+<p>✅ Customer Support: Dedicated team to ensure your complete 
+satisfaction.
+</p>
+
+<p>At Chhavi Industries, we believe in building long-term relationships
+with our clients by delivering reliable, high-performance, 
+and eco-conscious printing solutions. We aim to help your business 
+stand out with colors that last and inks you can trust.
+</p>
+
+
+  </div>
+</div>
+
+<script>
+/* MENU TOGGLE */
+function toggleMenu() {
+  const sidebar = document.getElementById("sidebar");
+  sidebar.style.left = (sidebar.style.left === "0px") ? "-250px" : "0px";
+}
+
+/* BACK BUTTON */
+function goBack() {
+  window.location.href = "products.html";
+}
+</script>
+
+</body>
+</html>

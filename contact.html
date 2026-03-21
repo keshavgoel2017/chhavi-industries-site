@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Contact - Chhavi Industries</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #ffffff; /* Changed to white */
+  color: #000; /* Default text color */
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: #ffffff; /* White header */
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 9999;
+  box-sizing: border-box;
+  border-bottom: 1px solid #ddd; /* subtle separation */
+}
+
+.menu-icon {
+  font-size: 28px;
+  cursor: pointer;
+  color: #000; /* black menu icon */
+}
+
+.logo img {
+  height: 40px;
+  max-width: 120px;
+  object-fit: contain;
+}
+
+/* SIDE MENU */
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background: #0b3d91; /* white menu */
+  padding-top: 60px;
+  transition: left 0.3s ease;
+  z-index: 10000;
+  border-right: 1px solid #ddd;
+}
+
+.side-menu.open {
+  left: 0;
+}
+
+.side-menu a {
+  display: block;
+  color: #eeeeee; /* blue links */
+  padding: 15px 20px;
+  text-decoration: none;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.side-menu a:hover {
+  background: #f0f0f0;
+}
+
+/* CONTENT */
+.content {
+  max-width: 900px;
+  margin: 100px auto 40px;
+  padding: 30px;
+  background: #f0f0f0; /* gray box */
+  border-radius: 10px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #000; /* black heading */
+}
+
+.contact-item {
+  margin-bottom: 20px;
+  font-size: 18px;
+  color: #0000ff; /* blue contact details */
+}
+
+.label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+  color: #0000ff; /* blue labels */
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+  <div class="logo">
+    <img src="images/logo.png" alt="Logo">
+  </div>
+</div>
+
+<!-- SIDE MENU -->
+<div id="menu" class="side-menu">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="products.html">Products</a>
+  <a href="industries.html">Industries</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<!-- CONTACT CONTENT -->
+<div class="content">
+
+  <h1>Contact Us</h1>
+
+  <div class="contact-item">
+    <span class="label">Company Name:</span>
+    Chhavi Industries
+  </div>
+
+  <div class="contact-item">
+    <span class="label">Address:</span>
+    Desh Raj Colony, Panipat, Haryana - 132103
+  </div>
+
+  <div class="contact-item">
+    <span class="label">Mobile:</span>
+    8572025077
+  </div>
+
+  <div class="contact-item">
+    <span class="label">Email:</span>
+    chhavi.ind2026@gmail.com
+  </div>
+
+</div>
+
+<!-- SCRIPT -->
+<script>
+// Toggle menu open/close
+function toggleMenu() {
+  const menu = document.getElementById("menu");
+  menu.classList.toggle("open");
+}
+
+// Close menu when clicking outside
+document.addEventListener("click", function(event) {
+  const menu = document.getElementById("menu");
+  const menuBtn = document.querySelector(".menu-icon");
+
+  if (menu.classList.contains("open") &&
+      !menu.contains(event.target) &&
+      !menuBtn.contains(event.target)) {
+    menu.classList.remove("open");
+  }
+});
+</script>
+
+</body>
+</html>
